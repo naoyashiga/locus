@@ -42,7 +42,7 @@ svgPath.strokeColor = "#364F6B";
 svgPath.strokeWidth = 2;
 svgPath.position = view.center;
 // svgPath.scale(0.5);
-// svgPath.rotate(-180)
+// svgPath.rotate(-180);
 
 var startPoint = svgPath.getPointAt(0)
 

@@ -13,6 +13,7 @@
 I used exclude files, js and paperscript.
 
 If you don't know about paperscript, please check below link.
+
 [Paper.js — Working with Paper.js](http://paperjs.org/tutorials/getting-started/working-with-paper-js/)
 
 ## Loading SVG
@@ -32,6 +33,12 @@ svgPath.strokeColor = "#364F6B";
 svgPath.strokeWidth = 2;
 svgPath.position = view.center;
 ```
+
+Try your original SVG!
+
+![2017-07-09 10 49 31](https://user-images.githubusercontent.com/1988660/27990508-5d1ed810-6494-11e7-955e-2424cec6e82f.png)
+
+For example, poop path :joy: :poop:
 
 
 
