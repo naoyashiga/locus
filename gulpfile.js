@@ -57,9 +57,9 @@ gulp.task('sass', function(){
 });
 
 gulp.task('deploy', function() {
-  return gulp.src('./src/**/*')
+  return gulp.src('./dist/**/*')
     .pipe($.ghPages({
-      remoteUrl: ""
+      remoteUrl: "https://github.com/naoyashiga/locus"
     }));
 });
 
