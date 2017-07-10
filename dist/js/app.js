@@ -34,21 +34,29 @@ function MyLine(from, to){
 	});
 }
 
+function Course() {
+	this.path = new Path.Star(view.center, 3, 100, 200)
+	this.path.strokeColor = "#364F6B";
+	this.path.strokeWidth = 2;
+	// this.path.scale(0.5);
+	this.path.rotate(-180);
+
+	// this.path = new Path(pathData);
+	// this.path.strokeColor = "#364F6B";
+	// this.path.strokeWidth = 2;
+	// this.path.position = view.center;
+}
+
 var balls = [],
     numBalls = 2;
 
-var svgPath = new Path(pathData);
-svgPath.strokeColor = "#364F6B";
-svgPath.strokeWidth = 2;
-svgPath.position = view.center;
-// svgPath.scale(0.5);
-// svgPath.rotate(-180);
+var coursePath = new Course().path
 
-var startPoint = svgPath.getPointAt(0)
+var startPoint = coursePath.getPointAt(0)
 
 for(var j = 0;j < numBalls;j++){
 	// balls.push(new Ball(startPoint, 0.1 * (j*0.8 + 0.5)));
-	balls.push(new Ball(startPoint, 0.5 * (j*0.8 + 0.5)));
+	balls.push(new Ball(startPoint, 0.8 * (j*0.1 + 1.5)));
 }
 
 var midPoint = new MidPoint(startPoint);
@@ -59,9 +67,9 @@ var locus = new Locus(startPoint, startPoint);
 function onFrame(event){
 	var offset, point;
 	for(var i = 0;i < numBalls;i++){
-		offset = svgPath.length * (event.count * balls[i].speed  % 100) / 100;
+		offset = coursePath.length * (event.count * balls[i].speed  % 100) / 100;
 
-		point = svgPath.getPointAt(offset);
+		point = coursePath.getPointAt(offset);
 
 		balls[i].path.position = point;
 	}
@@ -73,9 +81,9 @@ function onFrame(event){
 
 	myLine.path.remove();
 	myLine = new MyLine(p1, p2);
-	myLine.path.insertAbove(svgPath)
+	myLine.path.insertAbove(coursePath)
 
-	if(offset < svgPath.length) {
+	if(offset < coursePath.length) {
 		locus.path.add(midPoint.path.position);
 	}
 }
