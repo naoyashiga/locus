@@ -35,7 +35,8 @@ function MyLine(from, to){
 }
 
 function Course() {
-	this.path = new Path.Star(view.center, 3, 100, 200)
+	this.path = new Path.Circle(view.center, 300)
+	// this.path = new Path.Star(view.center, 3, 100, 200)
 	this.path.strokeColor = "#364F6B";
 	this.path.strokeWidth = 2;
 	// this.path.scale(0.5);
@@ -56,7 +57,7 @@ var startPoint = coursePath.getPointAt(0)
 
 for(var j = 0;j < numBalls;j++){
 	// balls.push(new Ball(startPoint, 0.1 * (j*0.8 + 0.5)));
-	balls.push(new Ball(startPoint, 0.8 * (j*0.1 + 1.5)));
+	balls.push(new Ball(startPoint, 0.1 * (j*3.5 + 1.5)));
 }
 
 var midPoint = new MidPoint(startPoint);
